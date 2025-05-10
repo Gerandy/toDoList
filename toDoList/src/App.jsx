@@ -46,17 +46,17 @@ function App() {
   return (
     <>
       <div className="items-center justify-center flex flex-col h-screen">
-        <fieldset className="border-2 border-gray-300 rounded-lg p-4">
+        <fieldset className="border-purple-500 scale-115 border-2 border-gray-300 rounded-lg p-4">
           <h1 className="text-3xl mt-1 text-center">To-Do List</h1>
-          <div className="flex space-x-2 mt-7">
+          <div className="flex space-x-2 mt-7 justify-center">
             <input
               type="text"
               placeholder="Add a new task"
               onChange={handleInputChange}
               value={newTask}
-              className="border-2 rounded-lg px-3 py-1"
+              className="hover:scale-102 border-2 rounded-lg px-3 py-1 hover:shadow-[0_2px_8px_rgba(192,132,252,1)] "
             />
-            <button className="bg-blue-500 px-2 rounded-lg" onClick={addTask}>
+            <button className="text-white hover:scale-102 hover:shadow-[0_2px_8px_rgba(192,132,252,1)] bg-gradient-to-r from-violet-500 to-purple-400 px-2 rounded-lg" onClick={addTask}>
               Add Task
             </button>
           </div>
@@ -65,11 +65,11 @@ function App() {
             {tasks.map((task, index) => (
               <li
                 key={index}
-                className="flex items-center mt-4 mb-3 border-2 p-2 rounded-lg"
+                className="flex items-center mt-4 mb-3 border-2 p-2 rounded-lg hover:-translate-y-1 transition-all"
               >
                 <input
                   type="checkbox"
-                  className="mr-2 scale-130"
+                  className="mr-2 scale-130 hover:scale-150"
                   onChange={() => toggleTaskCompletion(index)}
                   checked={completedTasks.has(index)}
                 />
@@ -82,7 +82,7 @@ function App() {
                 </span>
                 <div className="space-x-2 text-right ml-auto">
                   <button
-                    className="text-red-500"
+                    className="text-red-500 hover:scale-110"
                     onClick={() => deleteTask(index)}
                   >
                     Delete
